@@ -39,7 +39,6 @@ public class MainActivity extends AppCompatActivity {
         if (bmp != null) {
             bmp = Utilsmap.BoxBlurFilter(bmp);
             mIv_test.setImageBitmap(bmp);
-
         }
 
 //        传递bitmap

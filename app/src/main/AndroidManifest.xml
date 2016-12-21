@@ -19,5 +19,5 @@
                   android:theme="@style/wuTheme">
         </activity>
     </application>
-
+    <!--https://github.com/ycyranqingjjs/36krReader-master.git-->
 </manifest>
