@@ -1,5 +1,6 @@
 package com.qixiaoyi.jietutest;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Rect;
 import android.os.Bundle;
@@ -7,6 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Display;
 import android.view.View;
 import android.widget.ImageView;
+
+import java.io.ByteArrayOutputStream;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -33,23 +36,23 @@ public class MainActivity extends AppCompatActivity {
         view2.setDrawingCacheEnabled(true);
         Bitmap bmp = Bitmap.createBitmap(view2.getDrawingCache(), 0, statusBarHeight, display.getWidth(), display.getHeight() - statusBarHeight - SizeUtil.getNavigationBarHeight(this));
 
-//        if (bmp != null) {
-//            bmp = Utilsmap.BoxBlurFilter(bmp);
-//            mIv_test.setImageBitmap(bmp);
-//
-//        }
+        if (bmp != null) {
+            bmp = Utilsmap.BoxBlurFilter(bmp);
+            mIv_test.setImageBitmap(bmp);
 
-        //传递bitmap
-//        Bitmap bitmap = bmp;
-//        ByteArrayOutputStream baos=new ByteArrayOutputStream();
-//        bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos);
-//        byte [] bitmapByte =baos.toByteArray();
-//        Bundle bundle = new Bundle();
-//        bundle.putByteArray("bitmap", bitmapByte);
-//        Intent intent = new Intent();
-//        intent.setClass(MainActivity.this,Main2Activity.class);
-//        intent.putExtras(bundle);
-//        startActivity(intent);
+        }
+
+//        传递bitmap
+        Bitmap bitmap = bmp;
+        ByteArrayOutputStream baos=new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos);
+        byte [] bitmapByte =baos.toByteArray();
+        Bundle bundle = new Bundle();
+        bundle.putByteArray("bitmap", bitmapByte);
+        Intent intent = new Intent();
+        intent.setClass(MainActivity.this,Main2Activity.class);
+        intent.putExtras(bundle);
+        startActivity(intent);
 
         mydia dia = new mydia(MainActivity.this);
         dia.show();
