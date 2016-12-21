@@ -39,7 +39,19 @@ public class MainActivity extends AppCompatActivity {
         }
 
 //        传递bitmap
-
+//        Bitmap bitmap = bmp;
+//        ByteArrayOutputStream baos=new ByteArrayOutputStream();
+//        bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos);
+//        byte [] bitmapByte =baos.toByteArray();
+//        Bundle bundle = new Bundle();
+//        bundle.putByteArray("bitmap", bitmapByte);
+//        Intent intent = new Intent();
+//        intent.setClass(MainActivity.this,Main2Activity.class);
+//        intent.putExtras(bundle);
+//        startActivity(intent);
+//
+//        mydia dia = new mydia(MainActivity.this);
+//        dia.show();
 
     }
 }
